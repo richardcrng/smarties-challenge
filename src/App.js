@@ -1,37 +1,16 @@
 import React from 'react';
-import SmartiesColorRow from './components/molecules/SmartiesColorRow';
+import SmartiesBagContents from './components/organisms/SmartiesBagContents';
 
 function App() {
-  const [state, setState] = React.useState({
-    orange: 2,
-    yellow: 10,
-    pink: 5,
-    purple: 2,
-    green: 0,
-    red: 2,
-  })
-
-  const createColorDecrement = color => onClickEvent => {
-    setState(prevState => ({
-      ...prevState,
-      [color]: prevState[color] - 1
-    }))
-  }
 
   return (
     <div>
-      <SmartiesColorRow.Group>
-        {
-          Object.entries(state).filter(([color, n]) => n > 0)
-            .map(([color, n]) => (
-              <SmartiesColorRow
-                key={color}
-                {...{ color, n }}
-                onClick={createColorDecrement(color)}
-              />
-            ))
-        }
-      </SmartiesColorRow.Group>
+      <SmartiesBagContents
+        orange={2}
+        red={4}
+        green={8}
+        purple={9}
+      />
     </div>
   );
 }
