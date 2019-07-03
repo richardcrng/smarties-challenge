@@ -27,10 +27,6 @@ function Eat({ red, orange, blue, green, yellow, pink, violet, brown }) {
       }
     </EatContext.Provider>
   )
-
-  return Object.values(state).some(e => e > 0)
-    ? <EatSmarties {...{ red, orange, blue, green, yellow, pink, violet, brown }} />
-    : <AllGone />
 }
 
 export default Eat;
