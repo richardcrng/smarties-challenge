@@ -1,14 +1,18 @@
 import React from 'react';
-import { useAppToggle } from '../../../App';
+import { useAppToggle, useAppRandomiseBag } from '../../../App';
 
 function Yum() {
+  const randomise = useAppRandomiseBag()
   const toggle = useAppToggle()
 
   return (
     <>
       <h1>Yum, Smarties!</h1>
-      <button onClick={toggle}>
-        Open bag
+      <button onClick={() => {
+        randomise()
+        toggle()
+      }}>
+        Open random bag
       </button>
     </>
   )
