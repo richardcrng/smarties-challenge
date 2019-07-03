@@ -3,7 +3,9 @@ import React from 'react';
 function SmartiesGroup({ children }) {
   return (
     <div>
-      {children}
+      {React.Children.map(children, child => (
+        <div style={{ margin: '10px' }}>{child}</div>
+      ))}
     </div>
   )
 }
