@@ -1,11 +1,11 @@
 import React from 'react';
-import SmartiesBagContents from './components/organisms/SmartiesBagContents';
+import Eat from './components/pages/Eat/Eat';
 
 function App() {
 
   return (
     <div>
-      <SmartiesBagContents
+      <Eat
         orange={2}
         red={4}
         green={8}
