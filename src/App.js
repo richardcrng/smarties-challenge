@@ -1,6 +1,5 @@
 import React from 'react';
-import Smarties from './components/molecules/Smarties';
-import SmartiesGroup from './components/organisms/SmartiesGroup/SmartiesGroup';
+import SmartiesColorRow from './components/molecules/SmartiesColorRow';
 
 function App() {
   const [state, setState] = React.useState({
@@ -21,18 +20,18 @@ function App() {
 
   return (
     <div>
-      <SmartiesGroup>
+      <SmartiesColorRow.Group>
         {
           Object.entries(state).filter(([color, n]) => n > 0)
             .map(([color, n]) => (
-              <Smarties
+              <SmartiesColorRow
                 key={color}
                 {...{ color, n }}
                 onClick={createColorDecrement(color)}
               />
             ))
         }
-      </SmartiesGroup>
+      </SmartiesColorRow.Group>
     </div>
   );
 }

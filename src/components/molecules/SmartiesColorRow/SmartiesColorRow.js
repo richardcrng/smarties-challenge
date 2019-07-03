@@ -1,7 +1,8 @@
 import React from 'react';
 import Smartie from '../../atoms/Smartie';
+import SmartiesGroupOfRows from '../../organisms/SmartiesGroupOfRows';
 
-function Smarties({ n, color, onClick, style }) {
+function SmartiesColorRow({ n, color, onClick, style }) {
   return (
     <div style={style}>
       {[...Array(n).keys()].map((val, idx) => (
@@ -16,4 +17,6 @@ function Smarties({ n, color, onClick, style }) {
   )
 }
 
-export default Smarties;
+SmartiesColorRow.Group = SmartiesGroupOfRows
+
+export default SmartiesColorRow;

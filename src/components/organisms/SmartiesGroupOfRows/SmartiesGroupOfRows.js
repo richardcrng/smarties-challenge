@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SmartiesGroup({ children }) {
+function SmartiesGroupOfRows({ children }) {
   return (
     <div>
       {React.Children.map(children, child => (
@@ -10,4 +10,4 @@ function SmartiesGroup({ children }) {
   )
 }
 
-export default SmartiesGroup;
+export default SmartiesGroupOfRows;
