@@ -1,6 +1,7 @@
 import React from 'react';
 import EatSmarties from '../../templates/EatSmarties';
 import AllGone from '../../templates/AllGone';
+import { F7Page } from 'framework7-react';
 
 const EatContext = React.createContext()
 export const useSmartiesData = () => React.useContext(EatContext).smarties
@@ -34,13 +35,17 @@ function Eat(smarties) {
   }
 
   return (
-    <EatContext.Provider value={{ smarties: state, handler: createColorDecrement }}>
-      {
-        Object.values(state).some(e => e > 0)
-          ? <EatSmarties />
-          : <AllGone />
-      }
-    </EatContext.Provider>
+    <F7Page>
+      <div className='Page'>
+        <EatContext.Provider value={{ smarties: state, handler: createColorDecrement }}>
+          {
+            Object.values(state).some(e => e > 0)
+              ? <EatSmarties />
+              : <AllGone />
+          }
+        </EatContext.Provider>
+      </div>
+    </F7Page>
   )
 }
 

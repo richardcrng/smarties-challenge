@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
+import './index.css'
 import * as serviceWorker from './serviceWorker';
 
 // Import Framework7 Core
@@ -12,7 +12,7 @@ import Framework7 from 'framework7/framework7.esm.bundle.js';
 */
 
 // Import Framework7 React
-import Framework7React from 'framework7-react';
+import Framework7React, { F7App } from 'framework7-react';
 
 // Import F7 CSS
 import 'framework7/css/framework7.bundle.min.css'
@@ -20,7 +20,15 @@ import 'framework7/css/framework7.bundle.min.css'
 // Init plugin
 Framework7.use(Framework7React)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function Root() {
+  return (
+    <F7App>
+      <App />
+    </F7App>
+  )
+}
+
+ReactDOM.render(<Root />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

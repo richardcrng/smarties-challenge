@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppToggle } from '../../../App';
+import { F7Button } from 'framework7-react';
 
 function AllGone() {
   const toggle = useAppToggle()
@@ -7,9 +8,13 @@ function AllGone() {
   return (
     <>
       <h1>All gone!</h1>
-      <button onClick={toggle}>
+      <F7Button
+        fill
+        large
+        onClick={toggle}
+      >
         MOAR!
-      </button>
+      </F7Button>
     </>
   )
 }
