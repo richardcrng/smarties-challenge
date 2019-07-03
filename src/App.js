@@ -25,7 +25,11 @@ function App() {
         {
           Object.entries(state).filter(([color, n]) => n > 0)
             .map(([color, n]) => (
-              <Smarties key={color} {...{ color, n }} />
+              <Smarties
+                key={color}
+                {...{ color, n }}
+                onClick={createColorDecrement(color)}
+              />
             ))
         }
       </SmartiesGroup>
