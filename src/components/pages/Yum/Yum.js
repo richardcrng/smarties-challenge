@@ -6,7 +6,7 @@ function Yum() {
   const toggle = useAppToggle()
 
   return (
-    <>
+    <div className='Page'>
       <h1>Yum, Smarties!</h1>
       <button onClick={() => {
         randomise()
@@ -14,7 +14,7 @@ function Yum() {
       }}>
         Open random bag
       </button>
-    </>
+    </div>
   )
 }
 

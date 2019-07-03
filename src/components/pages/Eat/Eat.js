@@ -34,13 +34,15 @@ function Eat(smarties) {
   }
 
   return (
-    <EatContext.Provider value={{ smarties: state, handler: createColorDecrement }}>
-      {
-        Object.values(state).some(e => e > 0)
-          ? <EatSmarties />
-          : <AllGone />
-      }
-    </EatContext.Provider>
+    <div className='Page'>
+      <EatContext.Provider value={{ smarties: state, handler: createColorDecrement }}>
+        {
+          Object.values(state).some(e => e > 0)
+            ? <EatSmarties />
+            : <AllGone />
+        }
+      </EatContext.Provider>
+    </div>
   )
 }
 
