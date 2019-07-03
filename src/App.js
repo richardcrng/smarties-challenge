@@ -12,12 +12,22 @@ function App() {
     red: 2,
   })
 
+  const createColorDecrement = color => onClickEvent => {
+    setState(prevState => ({
+      ...prevState,
+      [color]: prevState[color] - 1
+    }))
+  }
+
   return (
     <div>
       <SmartiesGroup>
-        {Object.entries(state).map(([color, n]) => (
-          n > 0 ? <Smarties key={color} {...{ color, n }} /> : null
-        ))}
+        {
+          Object.entries(state).filter(([color, n]) => n > 0)
+            .map(([color, n]) => (
+              <Smarties key={color} {...{ color, n }} />
+            ))
+        }
       </SmartiesGroup>
     </div>
   );
