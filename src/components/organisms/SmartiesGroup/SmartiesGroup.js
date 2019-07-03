@@ -4,7 +4,7 @@ function SmartiesGroup({ children }) {
   return (
     <div>
       {React.Children.map(children, child => (
-        <div style={{ margin: '10px' }}>{child}</div>
+        child ? <div style={{ margin: '10px' }}>{child}</div> : null
       ))}
     </div>
   )

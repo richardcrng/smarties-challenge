@@ -8,14 +8,15 @@ function App() {
     yellow: 10,
     pink: 5,
     purple: 2,
-    red: 2
+    green: 0,
+    red: 2,
   })
 
   return (
     <div>
       <SmartiesGroup>
         {Object.entries(state).map(([color, n]) => (
-          <Smarties key={color} {...{ color, n }} />
+          n > 0 ? <Smarties key={color} {...{ color, n }} /> : null
         ))}
       </SmartiesGroup>
     </div>
