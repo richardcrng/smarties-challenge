@@ -1,10 +1,12 @@
 import React from 'react';
+import classes from './Smartie.module.css'
 
-function Smartie({ color }) {
+function Smartie({ color: backgroundColor }) {
   return (
-    <span style={{ color }}>
-      O
-    </span>
+    <span
+      className={classes.Smartie}
+      style={{ backgroundColor }}
+    />
   )
 }
 
